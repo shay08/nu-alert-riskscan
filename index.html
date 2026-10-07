@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Nu Alert™ Risk Scan — SYGNL Technologies™</title>
+<title>Nu Alert™ Intake Opportunity Scan — SYGNL Technologies™</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -472,7 +472,7 @@
   <div class="header">
     <div class="avatar">NA</div>
     <div class="header-info">
-      <div class="header-name">Nu Alert™ Risk Scan</div>
+      <div class="header-name">Nu Alert™ Intake Opportunity Scan</div>
       <div class="header-status">● online now</div>
     </div>
     <div class="header-actions">
@@ -486,13 +486,13 @@
     <div class="entry-state" id="entryState">
       <div class="entry-icon">📡</div>
       <div class="entry-tagline">Hidden Risk Starts at FNOL.™</div>
-      <div class="entry-sub">Type <strong>AUDIT</strong> below to begin your free volatility scan.</div>
+      <div class="entry-sub">Type <strong>OPPORTUNITY</strong> below to begin your free scan.</div>
     </div>
   </div>
 
   <!-- INPUT -->
   <div class="input-area">
-    <input class="text-input" id="userInput" placeholder="Type AUDIT to begin..." autocomplete="off"
+    <input class="text-input" id="userInput" placeholder="Type OPPORTUNITY to begin..." autocomplete="off"
       onkeydown="if(event.key==='Enter') sendText()" />
     <button class="send-btn" onclick="sendText()">
       <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
@@ -670,10 +670,10 @@ async function startFlow() {
   const entry = document.getElementById("entryState");
   if (entry) entry.remove();
 
-  addUser("AUDIT");
+  addUser("OPPORTUNITY");
   phase = "greeting";
 
-  await addBot("📡 Initialising Nu Alert™ Risk Scan...", 600);
+  await addBot("📡 Initialising Nu Alert™ Intake Opportunity Scan...", 600);
   await addBot("Welcome. I'm the FNOL Volatility Screener for SYGNL Technologies™.<br><br>In 5 questions, I'll identify exactly where your risk intake is leaking.", 800);
   await addBot("First — are you a <strong>fleet operator</strong> or an <strong>insurance carrier / broker</strong>?", 700);
 
@@ -751,35 +751,35 @@ async function showResult() {
     if (band === "LOW") {
       resultCopy = "Your FNOL intake looks relatively stable. Your biggest opportunity is hardening what's already working — before fleet growth creates new gaps.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Risk%20Scan%20and%20would%20like%20a%20fleet%20review." target="_blank" class="cta-btn cta-primary">📱 Request Fleet Review</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Intake%20Opportunity%20Scan%20and%20would%20like%20a%20fleet%20review." target="_blank" class="cta-btn cta-primary">📱 Request Fleet Review</a>
       `;
     } else if (band === "MODERATE") {
       resultCopy = "You have moderate volatility in your FNOL intake. The gap between incident and formal filing is where you're most exposed. The FNOL Intake Volatility Audit™ was built for exactly this stage.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Risk%20Scan%20and%20would%20like%20to%20book%20a%20Founding%20Fleet%20Partner%20call." target="_blank" class="cta-btn cta-primary">📱 Book Founding Fleet Call</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Intake%20Opportunity%20Scan%20and%20would%20like%20to%20book%20a%20Founding%20Fleet%20Partner%20call." target="_blank" class="cta-btn cta-primary">📱 Book Founding Fleet Call</a>
       `;
     } else {
       resultCopy = "Your fleet has high FNOL intake volatility. Based on your answers, you are experiencing The Double Failure — signals are being lost at intake before the claim is even filed. This is costing you money you cannot see.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Risk%20Scan.%20My%20score%20is%20HIGH%20volatility.%20I%20need%20an%20audit%20now." target="_blank" class="cta-btn cta-primary">🔴 Request Audit Now</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Intake%20Opportunity%20Scan.%20My%20score%20is%20HIGH%20volatility.%20I%27d%20like%20to%20book%20a%20call." target="_blank" class="cta-btn cta-primary">🔴 Book Priority Call</a>
       `;
     }
   } else {
     // Carrier
     if (band === "LOW") {
-      resultCopy = "Your intake infrastructure shows relative stability. A targeted audit will confirm where your intake chain is already strong — and close the remaining gaps before they become claims exposure.";
+      resultCopy = "Your intake infrastructure shows relative stability. A targeted review will confirm where your intake chain is already strong — and close the remaining gaps before they become claims exposure.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Risk%20Scan%20as%20a%20carrier%20and%20would%20like%20to%20discuss%20the%20Volatility%20Audit." target="_blank" class="cta-btn cta-primary">📱 Schedule Audit Review</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Intake%20Opportunity%20Scan%20as%20a%20carrier%20and%20would%20like%20to%20discuss%20next%20steps." target="_blank" class="cta-btn cta-primary">📱 Schedule a Review</a>
       `;
     } else if (band === "MODERATE") {
       resultCopy = "Your FNOL intake has identifiable gaps that are creating downstream exposure. The FNOL Intake Volatility Audit™ maps exactly where your process is vulnerable — before it affects reserves and outcomes.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Risk%20Scan%20as%20a%20carrier.%20Moderate%20volatility%20detected.%20Let%27s%20talk%20audit." target="_blank" class="cta-btn cta-primary">📱 Request Audit Consult</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20I%20completed%20the%20Nu%20Alert%20Intake%20Opportunity%20Scan%20as%20a%20carrier.%20Moderate%20volatility%20detected.%20Let%27s%20talk%20next%20steps." target="_blank" class="cta-btn cta-primary">📱 Book a Consult</a>
       `;
     } else {
       resultCopy = "Your FNOL intake chain has significant volatility. Data is entering your claims chain distorted — and the Double Failure is likely costing you in reserve accuracy and cycle time. This requires immediate attention.";
       ctaHtml = `
-        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20Nu%20Alert%20Risk%20Scan%20shows%20HIGH%20volatility%20on%20carrier%20side.%20I%20need%20the%20FNOL%20Volatility%20Audit%20now." target="_blank" class="cta-btn cta-primary">🔴 Request Priority Audit</a>
+        <a href="https://wa.me/14734146509?text=Hi%20Sharon%2C%20Nu%20Alert%20Intake%20Opportunity%20Scan%20shows%20HIGH%20volatility%20on%20carrier%20side.%20I%27d%20like%20a%20priority%20call." target="_blank" class="cta-btn cta-primary">🔴 Book Priority Call</a>
       `;
     }
   }
@@ -848,7 +848,7 @@ async function showResult() {
       </div>
       <div id="qr-area" style="display:none;margin-top:10px;text-align:center">
         <div id="qr-canvas"></div>
-        <div style="font-size:10px;color:var(--muted);margin-top:6px">Scan to open Risk Scan</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:6px">Scan to open the Opportunity Scan</div>
       </div>
       <div id="embed-area" style="display:none;margin-top:10px">
         <textarea id="embed-code" readonly style="width:100%;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--muted);font-size:9px;font-family:'DM Mono',monospace;resize:none;height:60px;outline:none"></textarea>
@@ -870,11 +870,11 @@ function sendText() {
   if (!val) return;
   input.value = "";
 
-  if (phase === "entry" && val === "AUDIT") {
+  if (phase === "entry" && (val === "OPPORTUNITY" || val === "AUDIT")) {
     startFlow();
   } else if (phase === "entry") {
     addUser(val);
-    addBot("Type <strong>AUDIT</strong> to begin your free volatility scan.", 400);
+    addBot("Type <strong>OPPORTUNITY</strong> to begin your free scan.", 400);
   }
 }
 
@@ -910,7 +910,7 @@ function copyEmbed() {
   const code = document.getElementById("embed-code");
   if (area.style.display === "none") {
     area.style.display = "block";
-    code.value = `<a href="${window.location.href}" target="_blank" style="display:inline-block;background:#C45C1A;color:#fff;padding:12px 24px;border-radius:8px;font-family:sans-serif;font-weight:700;text-decoration:none;font-size:14px">📡 Run Your Free FNOL Risk Scan</a>`;
+    code.value = `<a href="${window.location.href}" target="_blank" style="display:inline-block;background:#C45C1A;color:#fff;padding:12px 24px;border-radius:8px;font-family:sans-serif;font-weight:700;text-decoration:none;font-size:14px">📡 Run Your Free Intake Opportunity Scan</a>`;
     scroll();
   } else {
     area.style.display = "none";
@@ -936,10 +936,10 @@ function resetApp() {
     <div class="entry-state" id="entryState">
       <div class="entry-icon">📡</div>
       <div class="entry-tagline">Hidden Risk Starts at FNOL.™</div>
-      <div class="entry-sub">Type <strong>AUDIT</strong> below to begin your free volatility scan.</div>
+      <div class="entry-sub">Type <strong>OPPORTUNITY</strong> below to begin your free scan.</div>
     </div>
   `;
-  input.placeholder = "Type AUDIT to begin...";
+  input.placeholder = "Type OPPORTUNITY to begin...";
 }
 
 </script>
